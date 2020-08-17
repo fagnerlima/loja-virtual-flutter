@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "484952474704",
+    "firebase_url": "https://loja-virtual-fae9e.firebaseio.com",
+    "project_id": "loja-virtual-fae9e",
+    "storage_bucket": "loja-virtual-fae9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484952474704:android:0f9229a7c09beaae0a7d55",
+        "android_client_info": {
+          "package_name": "br.pro.fagnerlima.loja_virtual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484952474704-vflj4j0bj0oaqtbq7nca6leaf2dbt7gv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.pro.fagnerlima.loja_virtual",
+            "certificate_hash": "2a9d30c47fb2558a51d6fe84cb78dd7155c00d2a"
+          }
+        },
+        {
+          "client_id": "484952474704-k8dhju0iscsdoa4v5jf2bbi69luvl8v2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDolsMaiw7coG5U6miPhc6oumpXrEKJI8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484952474704-k8dhju0iscsdoa4v5jf2bbi69luvl8v2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
