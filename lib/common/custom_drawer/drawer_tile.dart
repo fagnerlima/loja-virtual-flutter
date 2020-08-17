@@ -25,7 +25,8 @@ class DrawerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final int currentPage = context.watch<PageManager>().page;
-    final Color color = currentPage == page ? Colors.red : Colors.grey[700];
+    final Color primaryColor = Theme.of(context).primaryColor;
+    final Color color = currentPage == page ? primaryColor : Colors.grey[700];
 
     return InkWell(
       onTap: () => context.read<PageManager>().page = page,

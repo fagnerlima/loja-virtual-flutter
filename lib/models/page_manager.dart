@@ -12,9 +12,9 @@ class PageManager {
   }
 
   set page(int value) {
-    if (this._page == value) return;
+    if (_page == value) return;
 
-    this._page = value;
+    _page = value;
     _pageController.jumpToPage(value);
   }
 }
