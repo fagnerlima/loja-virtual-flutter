@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:loja_virtual/models/user_manager.dart';
 import 'package:loja_virtual/screens/base/base_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,18 +12,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const Color primaryColor = Color.fromARGB(255, 4, 125, 141);
 
-    return MaterialApp(
-      title: 'Loja Virtual',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: primaryColor,
-        scaffoldBackgroundColor: primaryColor,
-        appBarTheme: const AppBarTheme(
-          elevation: 0
+    return Provider(
+      create: (_) => UserManager(),
+      child: MaterialApp(
+        title: 'Loja Virtual',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: primaryColor,
+          scaffoldBackgroundColor: primaryColor,
+          appBarTheme: const AppBarTheme(
+            elevation: 0
+          ),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        home: BaseScreen(),
       ),
-      home: BaseScreen(),
     );
   }
 }

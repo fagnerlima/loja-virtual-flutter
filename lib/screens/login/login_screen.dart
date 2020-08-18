@@ -1,9 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/helpers/validators.dart';
+import 'package:loja_virtual/models/user.dart';
+import 'package:loja_virtual/models/user_manager.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController senhaController = TextEditingController();
 
@@ -12,6 +18,7 @@ class LoginScreen extends StatelessWidget {
     final Color primaryColor = Theme.of(context).primaryColor;
 
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         title: const Text('Entrar'),
         centerTitle: true,
@@ -57,7 +64,21 @@ class LoginScreen extends StatelessWidget {
                   child: RaisedButton(
                     onPressed: () {
                       if (formKey.currentState.validate()) {
-                        print(emailController.text);
+                        Provider.of<UserManager>(context, listen: false).signIn(
+                            user: User(
+                                emailController.text,
+                                senhaController.text
+                            ),
+                            onSuccess: () {
+                              // TODO: fechar tela de Login
+                            },
+                            onFail: (String error) => scaffoldKey.currentState
+                                .showSnackBar(
+                                  SnackBar(
+                                    backgroundColor: Colors.red,
+                                    content: Text(error),
+                                  )
+                                ));
                       }
                     },
                     color: primaryColor,
