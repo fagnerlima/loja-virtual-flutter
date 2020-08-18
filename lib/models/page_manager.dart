@@ -4,7 +4,8 @@ class PageManager {
 
   PageManager(this._pageController);
 
-  PageController _pageController;
+  final PageController _pageController;
+
   int _page = 0;
 
   int get page {
