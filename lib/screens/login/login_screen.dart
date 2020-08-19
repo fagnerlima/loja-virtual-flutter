@@ -80,8 +80,8 @@ class LoginScreen extends StatelessWidget {
                           if (formKey.currentState.validate()) {
                             userManager.signIn(
                                 user: User(
-                                    emailController.text,
-                                    senhaController.text
+                                    email: emailController.text,
+                                    password: senhaController.text
                                 ),
                                 onSuccess: () {
                                   // TODO: fechar tela de Login
